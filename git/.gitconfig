@@ -1,0 +1,20 @@
+[user]
+  name = Eduardo Pilla Portilho
+  email = eduardo@portilho.com
+
+[alias]
+  st = status
+  co = checkout
+  nuke = !git reset --hard $1 && git clean -d -f
+  cm = !git add -A && git commit
+
+[color]
+	ui = true
+[push]
+	default = simple
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
