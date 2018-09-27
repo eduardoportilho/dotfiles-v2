@@ -7,7 +7,7 @@
   co = checkout
   nuke = !git reset --hard $1 && git clean -d -f
   cm = !git add -A && git commit
-
+  logg = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 [color]
 	ui = true
 [push]
