@@ -62,10 +62,23 @@ if [ $OS = "OSX" ]
 
     ################################
     # PATH
+    #
+    # set set -gx VARIABLE_NAME VALUES...
+    #   -g: global scope
+    #   -x: export to child processes (making it an "environment variable")
+    #   https://fishshell.com/docs/2.2/commands.html#set
 
-    # Postgres:
+    # Postgres.app:
     if test -d "/Applications/Postgres.app/Contents/Versions/latest/bin"
         set -gx PATH $PATH "/Applications/Postgres.app/Contents/Versions/latest/bin"
+    end
+
+    # Go:
+    if test -d $HOME/go
+        set -gx GOPATH $HOME/go
+    end
+    if test -d $GOPATH/bin
+        set -gx PATH $PATH $GOPATH/bin
     end
 
 end

@@ -12,7 +12,7 @@ My personal dotfiles for Fish Shell on MacOS.
 
 ###  2) Run the init script:
 ```
-git clone https://github.com/eduardoportilho/dotfiles.git
+git clone git@github.com:eduardoportilho/dotfiles-v2.git
 cd dotfiles
 ./init_fish.sh
 ```
