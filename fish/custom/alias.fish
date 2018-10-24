@@ -16,7 +16,37 @@ function md
 	cd $argv
 end
 
-set message $message" hlp, ll, md"
+function killport --description "Kill a process by a given port"
+  lsof -i TCP:$argv | grep LISTEN | awk '{print $2}' | xargs kill -9
+end
+
+set message $message" hlp, ll, md, killport"
+
+
+################################
+# Bang, $
+
+function fish_user_key_bindings
+    bind ! bind_bang
+    bind '$' bind_dollar
+end
+function bind_bang
+  switch (commandline -t)[-1]
+  case "!"
+    commandline -t $history[1]; commandline -f repaint
+  case "*"
+    commandline -i !
+  end
+end
+function bind_dollar
+  switch (commandline -t)[-1]
+  case "!"
+    commandline -t ""
+    commandline -f history-token-search-backward
+  case "*"
+    commandline -i '$'
+  end
+end
 
 ################################
 # Fish specific
