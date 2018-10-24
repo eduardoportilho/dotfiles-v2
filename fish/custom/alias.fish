@@ -36,6 +36,9 @@ if test -d ~/.nvm/
     function nvm
       bass source ~/.nvm/nvm.sh ';' nvm $argv
     end
+
+    # TopTal: node 8
+    nvm use 8
 end
 
 if [ $OS = "OSX" ]
@@ -80,6 +83,37 @@ if [ $OS = "OSX" ]
     if test -d $GOPATH/bin
         set -gx PATH $PATH $GOPATH/bin
     end
+
+    # TopTal: elasticsearch on path
+    set -g fish_user_paths "/usr/local/opt/elasticsearch@5.6/bin" $fish_user_paths
+
+    
+    ################################
+    # TopTal: imagemagick
+
+    # If you need to have imagemagick@6 first in your PATH run:
+    set -g fish_user_paths "/usr/local/opt/imagemagick@6/bin" $fish_user_paths
+
+    # For compilers to find imagemagick@6 you may need to set:
+    set -gx LDFLAGS "-L/usr/local/opt/imagemagick@6/lib"
+    set -gx CPPFLAGS "-I/usr/local/opt/imagemagick@6/include"
+
+    # For pkg-config to find imagemagick@6 you may need to set:
+    set -gx PKG_CONFIG_PATH "/usr/local/opt/imagemagick@6/lib/pkgconfig"
+
+    
+    ################################
+    # TopTal: libxml2
+    
+    # If you need to have libxml2 first in your PATH run:
+    set -g fish_user_paths "/usr/local/opt/libxml2/bin" $fish_user_paths
+
+    # For compilers to find libxml2 you may need to set:
+    set -gx LDFLAGS "-L/usr/local/opt/libxml2/lib"
+    set -gx CPPFLAGS "-I/usr/local/opt/libxml2/include"
+
+    # For pkg-config to find libxml2 you may need to set:
+    set -gx PKG_CONFIG_PATH "/usr/local/opt/libxml2/lib/pkgconfig"
 
 end
 

@@ -16,3 +16,6 @@ end
 
 # Enable autojump plugin
 [ -f /usr/local/share/autojump/autojump.fish ]; and source /usr/local/share/autojump/autojump.fish
+
+# Load rbenv automatically
+status --is-interactive; and source (rbenv init -|psub)

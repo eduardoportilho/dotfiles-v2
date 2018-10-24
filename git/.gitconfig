@@ -18,3 +18,9 @@
 [mergetool "sourcetree"]
 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
+[credential]
+	helper = osxkeychain
+[core]
+	excludesfile = /Users/eduardoportilho/.gitignore_global
+[commit]
+	template = /Users/eduardoportilho/.stCommitMsg
