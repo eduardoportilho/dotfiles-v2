@@ -19,3 +19,7 @@ end
 
 # Load rbenv automatically
 status --is-interactive; and source (rbenv init -|psub)
+
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/eduardoportilho/dev/tools/google-cloud-sdk/path.fish.inc' ]; . '/Users/eduardoportilho/dev/tools/google-cloud-sdk/path.fish.inc'; end
