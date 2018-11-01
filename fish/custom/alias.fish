@@ -2,7 +2,7 @@
 # Aliases and common functions
 #
 
-set message "[$OS] Aliases:"
+set message "🐟 [$OS]:"
 
 ################################
 # General
