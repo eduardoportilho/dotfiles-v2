@@ -8,19 +8,20 @@
   nuke = !git reset --hard $1 && git clean -d -f
   cm = !git add -A && git commit
   logg = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  fp = push --force-with-lease
 [color]
-	ui = true
+  ui = true
 [push]
-	default = simple
+  default = simple
 [difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+  cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+  path = 
 [mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+  cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+  trustExitCode = true
 [credential]
-	helper = osxkeychain
+  helper = osxkeychain
 [core]
-	excludesfile = /Users/eduardoportilho/.gitignore_global
+  excludesfile = /Users/eduardoportilho/.gitignore_global
 [commit]
-	template = /Users/eduardoportilho/.stCommitMsg
+  template = /Users/eduardoportilho/.stCommitMsg

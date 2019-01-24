@@ -20,7 +20,17 @@ function killport --description "Kill a process by a given port"
   lsof -i TCP:$argv | grep LISTEN | awk '{print $2}' | xargs kill -9
 end
 
-set message $message" hlp, ll, md, killport"
+function cheat
+  curl cht.sh/$argv
+end
+
+# Remove `node_modules` and `zip` files recursively on the directory
+function clean_node_modules
+  find $argv -name node_modules -type d -exec rm -rf '{}' +
+  find $argv -name "*.zip" -exec rm -rf '{}' +
+end
+
+set message $message" hlp, ll, md, killport, cheat, clean_node_modules"
 
 
 ################################
@@ -51,10 +61,10 @@ end
 ################################
 # Fish specific
 
-alias fishrst "source ~/.config/fish/config.fish"
+alias fish_reset "source ~/.config/omf/init.fish"
 alias gobash "exec /bin/bash -l"
 
-set message $message", fishrst, gobash"
+set message $message", fish_reset, gobash"
 
 
 ################################

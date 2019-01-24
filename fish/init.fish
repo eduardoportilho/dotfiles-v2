@@ -10,6 +10,7 @@ else
 end
 
 # Load custom functions
+# Private config that should not be commited can be added to 'fish/custom/local.fish'
 for path in $OMF_CONFIG/custom/*
 	source $path ^/dev/null
 end
@@ -19,7 +20,6 @@ end
 
 # Load rbenv automatically
 status --is-interactive; and source (rbenv init -|psub)
-
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/eduardoportilho/dev/tools/google-cloud-sdk/path.fish.inc' ]; . '/Users/eduardoportilho/dev/tools/google-cloud-sdk/path.fish.inc'; end
