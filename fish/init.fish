@@ -10,7 +10,7 @@ else
 end
 
 # Load custom functions
-# Private config that should not be commited can be added to 'fish/custom/local.fish'
+# Private config that should not be commited can be added to 'fish/custom/_local.fish'
 for path in $OMF_CONFIG/custom/*
 	source $path ^/dev/null
 end
